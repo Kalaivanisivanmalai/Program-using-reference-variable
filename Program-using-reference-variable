@@ -1,0 +1,39 @@
+# Program-using-reference-variable
+coding:
+class Car {
+    String brand;
+    String color;
+    Car(String brand, String color) {
+        this.brand = brand;
+        this.color = color;
+    }
+    void displayDetails() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Color: " + color);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car car1 = new Car("Tesla", "Red");
+        car1.displayDetails();
+        System.out.println();
+        Car car2 = car1;
+        car2.color = "Blue";
+        System.out.println("Details using car1:");
+        car1.displayDetails();
+        System.out.println("\nDetails using car2:");
+        car2.displayDetails();
+    }
+}
+
+output:
+Brand: Tesla
+Color: Red
+
+Details using car1:
+Brand: Tesla
+Color: Blue
+
+Details using car2:
+Brand: Tesla
+Color: Blue
